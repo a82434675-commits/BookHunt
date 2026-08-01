@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StudyMart — Login</title>
+<style>
+  :root {
+    --paper: #f6f4ee;
+    --ink: #1f2937;
+    --ink-soft: #5b6472;
+    --line: #dcd8cc;
+    --accent: #2f6f6d;
+    --accent-soft: #e4efee;
+    --danger: #b3492f;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0 0 4px;
+  }
+
+  p.sub {
+    text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    margin: 0 0 24px;
+  }
+
+  label {
+    display: block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    background: var(--paper);
+  }
+
+  button {
+    width: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  button:hover { opacity: 0.9; }
+
+  .toggle {
+    text-align: center;
+    margin-top: 18px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .toggle a {
+    color: var(--accent);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .error {
+    background: #fbeae5;
+    color: var(--danger);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    border-radius: 3px;
+    margin-bottom: 16px;
+  }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h1>StudyMart</h1>
+  <p class="sub" id="form-subtitle">Log in to continue</p>
+
+  <div id="error-box" class="error hidden"></div>
+
+  <form id="login-form" method="POST" action="/auth/login">
+    <label for="login-username">Username</label>
+    <input type="text" id="login-username" name="username" required>
+
+    <label for="login-password">Password</label>
+    <input type="password" id="login-password" name="password" required>
+
+    <button type="submit">Log In</button>
+  </form>
+
+  <form id="signup-form" method="POST" action="/auth/signup" class="hidden">
+    <label for="signup-username">Choose a username (letters only)</label>
+    <input type="text" id="signup-username" name="username" pattern="[A-Za-z]+" title="Letters only, no numbers or symbols" required>
+
+    <label for="signup-email">Gmail address</label>
+    <input type="text" id="signup-email" name="email" placeholder="yourname@gmail.com" required>
+
+    <label for="signup-password">Choose a password</label>
+    <input type="password" id="signup-password" name="password" required>
+    <div style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.75rem; color:var(--ink-soft); margin:-10px 0 16px;">
+      Must be 8+ characters with uppercase, lowercase, a number, and a special character (e.g. @, #, !)
+    </div>
+
+    <button type="submit">Create Account</button>
+  </form>
+
+  <div class="toggle">
+    <span id="toggle-to-signup">New here? <a onclick="showSignup()">Create an account</a></span>
+    <span id="toggle-to-login" class="hidden">Already have an account? <a onclick="showLogin()">Log in</a></span>
+  </div>
+</div>
+
+<script>
+function showSignup() {
+  document.getElementById("login-form").classList.add("hidden");
+  document.getElementById("signup-form").classList.remove("hidden");
+  document.getElementById("toggle-to-signup").classList.add("hidden");
+  document.getElementById("toggle-to-login").classList.remove("hidden");
+  document.getElementById("form-subtitle").textContent = "Create your account";
+}
+
+function showLogin() {
+  document.getElementById("signup-form").classList.add("hidden");
+  document.getElementById("login-form").classList.remove("hidden");
+  document.getElementById("toggle-to-login").classList.add("hidden");
+  document.getElementById("toggle-to-signup").classList.remove("hidden");
+  document.getElementById("form-subtitle").textContent = "Log in to continue";
+}
+
+// URL میں سے Error دکھانا (اگر ہو)
+const params = new URLSearchParams(window.location.search);
+const errorMsg = params.get("error");
+if (errorMsg) {
+  const box = document.getElementById("error-box");
+  box.textContent = errorMsg;
+  box.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

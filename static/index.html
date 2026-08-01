@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>BookHunt</title>
+<style>
+  :root {
+    --paper: #f6f4ee;
+    --ink: #06090c;
+    --ink-soft: #08090c;
+    --line: #decd9a;
+    --accent: #47a7a4;
+    --accent-soft: #e4efee;
+    --danger: #b73312;
+  }
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input, textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+#query-results, #query-results * {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+#query-results, #query-results *,
+.file-name, .file-meta {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+ body {
+  margin: 0;
+  background-image:
+  linear-gradient(rgba(246, 244, 238, 0.55), rgba(246, 244, 238, 0.55)),
+  url('/static/body-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--ink);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  min-height: 100vh;
+}
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px 0;
+    background-image:
+      linear-gradient(rgba(246, 244, 238, 0.75), rgba(246, 244, 238, 0.75)),
+      url('/static/header-bg.svg');
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: var(--ink-soft);
+    padding: 8px 18px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav button:hover { color: var(--accent); }
+
+  nav button.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    font-weight: 600;
+  }
+
+  header {
+    padding: 40px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background-image:
+      linear-gradient(rgba(246, 244, 238, 0.75), rgba(246, 244, 238, 0.75)),
+      url('/static/header-bg.svg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin: 0 0 6px;
+    letter-spacing: 0.5px;
+  }
+
+  header p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink-soft);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  main {
+    max-width: none;
+    margin: 0;
+    padding: 32px clamp(20px, 6vw, 96px) 80px;
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+
+  .panel h2 {
+    font-size: 1.1rem;
+    margin: 0 0 16px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+
+  .about-text {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  label {
+    display: block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+
+  input[type="text"], input[type="file"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    background: var(--paper);
+  }
+
+  button.action {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  button.action:hover { opacity: 0.9; }
+
+  button.danger { background: var(--danger); }
+
+  .file-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .file-row:last-child { border-bottom: none; }
+
+  .file-name { font-weight: 600; }
+  .file-meta { font-size: 0.75rem; color: var(--ink-soft); }
+
+  .status {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    border-radius: 3px;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .status.show { display: block; }
+  .status.ok { background: var(--accent-soft); color: var(--accent); }
+  .status.error { background: #fbeae5; color: var(--danger); }
+
+  .empty {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .match-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .match-item strong { color: var(--accent); }
+  .match-snippet { color: var(--ink-soft); margin-top: 4px; }
+
+  .result-group {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .result-group .group-title {
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  #profile-widget {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 100;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  #profile-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  #profile-trigger:hover { background: var(--accent-soft); }
+
+  #profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+
+  #profile-menu {
+    display: none;
+    position: absolute;
+    bottom: 52px;
+    left: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    min-width: 180px;
+    overflow: hidden;
+  }
+
+  #profile-menu.show { display: block; }
+
+  #profile-menu button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  #profile-menu button:hover { background: var(--accent-soft); }
+
+  #profile-menu button.danger-item { color: var(--danger); }
+  #profile-menu button.danger-item:hover { background: #fbeae5; }
+
+  #profile-menu hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <button id="nav-home" class="active" onclick="showPage('home')">Home</button>
+  <button id="nav-query" onclick="showPage('query')">Query</button>
+  <button id="nav-about" onclick="showPage('about')">About Us</button>
+</nav>
+
+<header>
+  <h1>BookHunt</h1>
+  <p>Upload, search, and manage your PDF files</p>
+</header>
+
+<main>
+
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page active">
+
+    <section class="panel">
+      <h2>Upload a PDF</h2>
+      <label for="upload-name">File name</label>
+      <input type="text" id="upload-name" placeholder="e.g. English Book">
+
+      <label for="upload-file">Choose PDF</label>
+      <input type="file" id="upload-file" accept="application/pdf">
+
+      <button class="action" onclick="uploadFile()">Upload</button>
+      <div id="upload-status" class="status"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Your Files</h2>
+      <div id="file-list"><div class="empty">Loading...</div></div>
+    </section>
+
+  </div>
+
+  <!-- QUERY PAGE -->
+  <div id="page-query" class="page">
+    <section class="panel">
+      <h2>Search inside a PDF</h2>
+      <label for="query-uuid">Select file</label>
+      <select id="query-uuid">
+        <option value="">All Files</option>
+      </select>
+
+      <label for="query-text">Question / Keyword</label>
+      <input type="text" id="query-text" placeholder="e.g. Experience">
+
+      <button class="action" onclick="searchFile()">Search</button>
+      <div id="query-status" class="status"></div>
+      <div id="query-results"></div>
+    </section>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="page-about" class="page">
+    <section class="panel">
+      <h2>About Us</h2>
+      <div class="about-text">
+        <p><strong>BookHunt</strong> is a simple, self-hosted platform for storing, organizing, and searching your PDF documents — built for students, teachers, and anyone who works with a lot of study material.</p>
+
+        <p>Here's everything BookHunt lets you do:</p>
+
+        <p><strong>Upload PDFs</strong><br>
+        Add any PDF file to your personal library and give it a name of your choice, so it's easy to recognize later.</p>
+
+        <p><strong>Organize your library</strong><br>
+        Every file you upload appears in one clean list, along with the date it was added and its file size, so you always know what you have and when it was added.</p>
+
+        <p><strong>Rename files</strong><br>
+        Changed your mind about a file's name? Rename it anytime without needing to re-upload the file.</p>
+
+        <p><strong>Replace a file</strong><br>
+        Need to update a document with a newer version? Replace the old file with a new one while keeping the same entry.</p>
+
+        <p><strong>View and download</strong><br>
+        Open any uploaded PDF directly in your browser, or download it, with a single click.</p>
+
+        <p><strong>Delete files</strong><br>
+        Remove any file you no longer need, permanently and instantly.</p>
+
+        <p><strong>Search inside your PDFs</strong><br>
+        Type in a keyword or question, and BookHunt will scan through the text of your PDF and show you the exact passages where that word appears — no more manually scrolling through long documents.</p>
+
+        <p><strong>Search across your entire library</strong><br>
+        Not sure which file has the information you need? Search all of your uploaded PDFs at once, and BookHunt will tell you which files contain matches and show you the relevant snippets.</p>
+
+        <p><strong>Duplicate protection</strong><br>
+        BookHunt automatically checks if a file with the same name already exists, and also checks if the exact same file has already been uploaded under a different name — so your library stays clean and free of duplicates.</p>
+
+        <p>BookHunt is designed to be simple and fast: no clutter, no unnecessary steps, just a clean way to keep your documents organized and searchable in one place.</p>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<div id="profile-widget">
+  <div id="profile-trigger" onclick="toggleProfileMenu()">
+    <div id="profile-avatar">?</div>
+  </div>
+  <div id="profile-menu">
+    <button onclick="window.location.href='/auth/logout'">Logout</button>
+    <hr>
+    <button class="danger-item" onclick="confirmDeleteAccount()">Delete Account</button>
+  </div>
+</div>
+
+<script>
+const API = "";
+
+function showPage(page) {
+  document.getElementById("page-home").classList.remove("active");
+  document.getElementById("page-query").classList.remove("active");
+  document.getElementById("page-about").classList.remove("active");
+  document.getElementById("nav-home").classList.remove("active");
+  document.getElementById("nav-query").classList.remove("active");
+  document.getElementById("nav-about").classList.remove("active");
+
+  document.getElementById("page-" + page).classList.add("active");
+  document.getElementById("nav-" + page).classList.add("active");
+}
+
+function generateUUID() {
+  return crypto.randomUUID();
+}
+
+function showStatus(el, message, isError) {
+  el.textContent = message;
+  el.className = "status show " + (isError ? "error" : "ok");
+}
+
+async function loadFiles() {
+  const listEl = document.getElementById("file-list");
+  const selectEl = document.getElementById("query-uuid");
+
+  try {
+    const res = await fetch(API + "/files/");
+    const data = await res.json();
+
+    if (!data.files || data.files.length === 0) {
+      listEl.innerHTML = '<div class="empty">No files uploaded yet.</div>';
+      selectEl.innerHTML = '<option value="">All Files</option>';
+      return;
+    }
+
+    let listHTML = "";
+    for (let i = 0; i < data.files.length; i++) {
+      const f = data.files[i];
+const sizeKB = f.file_size_bytes ? (f.file_size_bytes / (1024 * 1024)).toFixed(2) + " MB" : "—";      const date = f.uploaded_at ? new Date(f.uploaded_at).toLocaleString() : "—";
+
+      listHTML += '<div class="file-row">';
+      listHTML += '<div>';
+      listHTML += '<div class="file-name">' + f.filename + '</div>';
+      listHTML += '<div class="file-meta">' + date + ' &nbsp;•&nbsp; ' + sizeKB + '</div>';
+      listHTML += '</div>';
+      listHTML += '<div style="display:flex; gap:8px;">';
+      listHTML += '<a href="/download/' + f.uuid + '" target="_blank" style="text-decoration:none;"><button class="action" type="button">View</button></a>';
+      listHTML += '<button class="action" onclick="renameFile(\'' + f.uuid + '\', \'' + f.filename.replace(/'/g, "\\'") + '\')">Rename</button>';
+      listHTML += '<button class="danger" onclick="deleteFile(\'' + f.uuid + '\')">Delete</button>';
+      listHTML += '</div>';
+      listHTML += '</div>';
+    }
+    listEl.innerHTML = listHTML;
+
+    let selectHTML = '<option value="">All Files</option>';
+    for (let i = 0; i < data.files.length; i++) {
+      const f = data.files[i];
+      selectHTML += '<option value="' + f.uuid + '">' + f.filename + '</option>';
+    }
+    selectEl.innerHTML = selectHTML;
+
+  } catch (err) {
+    listEl.innerHTML = '<div class="empty">Could not load files.</div>';
+    console.error(err);
+  }
+}
+
+async function uploadFile() {
+  const nameInput = document.getElementById("upload-name");
+  const fileInput = document.getElementById("upload-file");
+  const statusEl = document.getElementById("upload-status");
+
+  if (!nameInput.value || !fileInput.files[0]) {
+    showStatus(statusEl, "Please provide both a name and a file.", true);
+    return;
+  }
+
+  const uuid = generateUUID();
+  const formData = new FormData();
+  formData.append("filename", nameInput.value);
+  formData.append("file", fileInput.files[0]);
+
+  try {
+    const res = await fetch(API + "/upload/" + uuid, {
+      method: "POST",
+      body: formData
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      showStatus(statusEl, data.detail || "Upload failed", true);
+      return;
+    }
+
+    showStatus(statusEl, "File uploaded successfully.", false);
+    nameInput.value = "";
+    fileInput.value = "";
+    loadFiles();
+  } catch (err) {
+    showStatus(statusEl, "Something went wrong during upload.", true);
+  }
+}
+
+async function deleteFile(uuid) {
+  if (!confirm("Are you sure you want to delete this file?")) return;
+
+  try {
+    const res = await fetch(API + "/delete/" + uuid, { method: "DELETE" });
+    const data = await res.json();
+
+    if (res.ok) {
+      loadFiles();
+    } else {
+      alert(data.detail || "Could not delete the file.");
+    }
+  } catch (err) {
+    alert("Could not connect to the server.");
+  }
+}
+
+async function renameFile(uuid, currentName) {
+  const newName = prompt("Enter new name:", currentName);
+
+  if (!newName || !newName.trim() || newName === currentName) return;
+
+  const formData = new FormData();
+  formData.append("filename", newName);
+
+  try {
+    const res = await fetch(API + "/rename/" + uuid, {
+      method: "PATCH",
+      body: formData
+    });
+    const data = await res.json();
+
+    if (res.ok) {
+      loadFiles();
+    } else {
+      alert(data.detail || "Could not rename the file.");
+    }
+  } catch (err) {
+    alert("Could not connect to the server.");
+  }
+}
+
+async function searchFile() {
+  const uuid = document.getElementById("query-uuid").value;
+  const question = document.getElementById("query-text").value;
+  const statusEl = document.getElementById("query-status");
+  const resultsEl = document.getElementById("query-results");
+
+  resultsEl.innerHTML = "";
+  statusEl.className = "status";
+
+  if (!question) {
+    showStatus(statusEl, "Please enter a question or keyword.", true);
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("question", question);
+
+  const endpoint = uuid ? (API + "/query/" + uuid) : (API + "/query/");
+
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      body: formData
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      showStatus(statusEl, data.detail || "Search failed", true);
+      return;
+    }
+
+    if (data.matches !== undefined) {
+      if (data.matches.length === 0) {
+        resultsEl.innerHTML = '<div class="empty">No results found.</div>';
+        return;
+      }
+      let html = "";
+      for (let i = 0; i < data.matches.length; i++) {
+        const m = data.matches[i];
+        html += '<div class="match-item"><strong>' + m.matched_keyword + '</strong><div class="match-snippet">' + m.snippet + '</div></div>';
+      }
+      resultsEl.innerHTML = html;
+      return;
+    }
+
+    if (!data.results || data.results.length === 0) {
+      resultsEl.innerHTML = '<div class="empty">No matches found in any file.</div>';
+      return;
+    }
+
+    let html = "";
+    for (let i = 0; i < data.results.length; i++) {
+      const r = data.results[i];
+      html += '<div class="result-group"><div class="group-title">' + r.filename + '</div>';
+      for (let j = 0; j < r.top_matches.length; j++) {
+        const m = r.top_matches[j];
+        html += '<div class="match-item"><strong>' + m.matched_keyword + '</strong><div class="match-snippet">' + m.snippet + '</div></div>';
+      }
+      html += '</div>';
+    }
+    resultsEl.innerHTML = html;
+
+  } catch (err) {
+    showStatus(statusEl, "Something went wrong during search.", true);
+  }
+}
+
+function getInitials(username) {
+  // agar username camelCase mein ho (jaise "AbdullahKhan"), to uppercase letters se initials nikalo
+  const upperLetters = username.match(/[A-Z]/g);
+  if (upperLetters && upperLetters.length >= 2) {
+    return (upperLetters[0] + upperLetters[1]).toUpperCase();
+  }
+  // warna username ke pehle 2 letters use karo
+  return username.substring(0, 2).toUpperCase();
+}
+
+async function loadProfile() {
+  const avatarEl = document.getElementById("profile-avatar");
+
+  try {
+    const res = await fetch("/auth/me");
+    if (!res.ok) {
+      window.location.href = "/login";
+      return;
+    }
+    const data = await res.json();
+    const name = data.username || "User";
+
+    avatarEl.textContent = getInitials(name);
+  } catch (err) {
+    avatarEl.textContent = "?";
+  }
+}
+
+function toggleProfileMenu() {
+  document.getElementById("profile-menu").classList.toggle("show");
+}
+
+document.addEventListener("click", function (event) {
+  const widget = document.getElementById("profile-widget");
+  if (widget && !widget.contains(event.target)) {
+    document.getElementById("profile-menu").classList.remove("show");
+  }
+});
+
+async function confirmDeleteAccount() {
+  if (!confirm("Are you sure you want to delete your account? This cannot be undone.")) return;
+
+  try {
+    const res = await fetch("/auth/delete-account", { method: "POST" });
+    if (res.redirected) {
+      window.location.href = res.url;
+    } else {
+      window.location.href = "/login";
+    }
+  } catch (err) {
+    alert("Could not delete account. Please try again.");
+  }
+}
+
+loadFiles();
+loadProfile();
+</script>
+
+</body>
+</html>
